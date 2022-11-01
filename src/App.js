@@ -27,7 +27,7 @@ function App() {
         <Input setSearchTerm={setSearchTerm} />
         <Routes>
           <Route
-            path="/"
+            path="/movie-project"
             element={
               <Main
                 searchTerm={searchTerm}
@@ -37,7 +37,7 @@ function App() {
             }
           />
           <Route
-            path="/movies"
+            path="/movie-project/movies"
             element={
               <OnlyMovies
                 searchTerm={searchTerm}
@@ -47,7 +47,7 @@ function App() {
             }
           />
           <Route
-            path="/tvseries"
+            path="/movie-project/tvseries"
             element={
               <OnlyTvSeries
                 searchTerm={searchTerm}
@@ -57,7 +57,7 @@ function App() {
             }
           />
           <Route
-            path="/bookmarked"
+            path="/movie-project/bookmarked"
             element={
               <BookmarkPage
                 searchTerm={searchTerm}
