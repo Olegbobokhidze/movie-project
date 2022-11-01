@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.743c4c6d.css","mappings":"AAGA,sBACE,SACF,CACA,UACE,YACF,CACA,gBACE,YACF","sources":["components/Header.css"],"sourcesContent":[".active {\n  fill: white;\n}\n.active:hover {\n  fill: white;\n}\n.unactive {\n  fill: #5a698f;\n}\n.unactive:hover {\n  fill: #fc4747;\n}\n"],"names":[],"sourceRoot":""}
