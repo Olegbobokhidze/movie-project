@@ -1,0 +1,12 @@
+.active {
+  fill: white;
+}
+.active:hover {
+  fill: white;
+}
+.unactive {
+  fill: #5a698f;
+}
+.unactive:hover {
+  fill: #fc4747;
+}

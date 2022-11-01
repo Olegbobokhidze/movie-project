@@ -1,24 +1,75 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Header from "./components/Header";
+import { GlobalStyle } from "./GlobalStyles";
+import Input from "./components/Input";
+import Main from "./components/Main";
+import OnlyMovies from "./components/OnlyMovies";
+import OnlyTvSeries from "./components/OnlyTvSeries";
+import Data from "./components/data.json";
+import BookmarkPage from "./components/BookmarkPage";
+import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [contentList, setContentList] = useState(Data);
+  function setBookmarked(movie) {
+    const currentMovie = (element) => element.title === movie.title;
+    const currentMovieId = contentList.findIndex(currentMovie);
+    const bookmarkArray = [...contentList];
+    bookmarkArray[currentMovieId].isBookmarked =
+      !bookmarkArray[currentMovieId].isBookmarked;
+    setContentList(bookmarkArray);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <GlobalStyle />
+        <Header />
+        <Input setSearchTerm={setSearchTerm} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Main
+                searchTerm={searchTerm}
+                contentList={contentList}
+                setBookmarked={setBookmarked}
+              />
+            }
+          />
+          <Route
+            path="/movies"
+            element={
+              <OnlyMovies
+                searchTerm={searchTerm}
+                contentList={contentList}
+                setBookmarked={setBookmarked}
+              />
+            }
+          />
+          <Route
+            path="/tvseries"
+            element={
+              <OnlyTvSeries
+                searchTerm={searchTerm}
+                contentList={contentList}
+                setBookmarked={setBookmarked}
+              />
+            }
+          />
+          <Route
+            path="/bookmarked"
+            element={
+              <BookmarkPage
+                searchTerm={searchTerm}
+                contentList={contentList}
+                setContentList={setContentList}
+                setBookmarked={setBookmarked}
+              />
+            }
+          />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
