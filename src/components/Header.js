@@ -57,26 +57,26 @@ export default function Header() {
       <Logo />
       <IconHolder>
         <NavLink
-          to="/"
+          to="/movie-project"
           end
           className={({ isActive }) => (isActive ? "active" : "unactive")}
         >
           <IconHome />
         </NavLink>
         <NavLink
-          to="/movies"
+          to="/movie-project/movies"
           className={({ isActive }) => (isActive ? "active" : "unactive")}
         >
           <IconMovies />
         </NavLink>
         <NavLink
-          to="/tvseries"
+          to="/movie-project/tvseries"
           className={({ isActive }) => (isActive ? "active" : "unactive")}
         >
           <IconTvSeries />
         </NavLink>
         <NavLink
-          to="/bookmarked"
+          to="/movie-project/bookmarked"
           className={({ isActive }) => (isActive ? "active" : "unactive")}
         >
           <IconBookmark />

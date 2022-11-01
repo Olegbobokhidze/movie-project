@@ -42,7 +42,7 @@
     "thumbnail": {
       "trending": {
         "small": "/assets/thumbnails/undiscovered-cities/trending/small.jpg",
-        "large": "./assets/thumbnails/undiscovered-cities/trending/large.jpg"
+        "large": "/assets/thumbnails/undiscovered-cities/trending/large.jpg"
       },
       "regular": {
         "small": "/assets/thumbnails/undiscovered-cities/regular/small.jpg",
@@ -61,7 +61,7 @@
     "thumbnail": {
       "trending": {
         "small": "/assets/thumbnails/1998/trending/small.jpg",
-        "large": "./assets/thumbnails/1998/trending/large.jpg"
+        "large": "/assets/thumbnails/1998/trending/large.jpg"
       },
       "regular": {
         "small": "/assets/thumbnails/1998/regular/small.jpg",
